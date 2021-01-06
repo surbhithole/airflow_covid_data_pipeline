@@ -7,9 +7,27 @@ Data Sources:
 2) [Kaggle Notebook](https://www.kaggle.com/kerneler/starter-enriched-nytimes-covid19-u-s-69697254-e?select=us_county_pop_and_shps.csv)
 3) [NOAA Global Surface Summary of the Day](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00516)
 
-# Document steps necessary to clean the Data
+Data collection and Cleaning:
 
-Step 3: Define the Data Model
+I used the following datasets for my data pipeline:
+1) County Data
+2) Mask_use_by_county data
+3) College Data
+4) County Location Data
+5) US weather data
+6) Weather stations Data
 
-    Map out the conceptual data model and explain why you chose that model
-    List the steps necessary to pipeline the data into the chosen data model
+I collected the weather data for US only. Removed the stations where Latitude and Longitude values were not present.
+Using the KNN algorithm, I calculated the nearest counties for each weather station in US. (Python Notebook)
+
+Data Model:
+
+
+
+Steps to create the data model:
+
+1) Stage all the data from the folder to redshift.
+2) Combine counties data with counties_location data to get the county_center_latitude and county_center_longitude.
+3) Get the subset of weather data for US country and combine it with stations data to get the weather stations information.
+4) Using KNN find nearest counties to each weather station data using the latitude and longitude information for counties and stations data.
+5) Combine college data with county data based on state and county name and get the ipeds_id of the colleges in all the respective counties.
