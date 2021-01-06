@@ -2,7 +2,7 @@
 
 The 3,142 counties of the United States span a diverse range of social, economic, health, and weather conditions. County-level data on covid related cases, deaths, usage of mask, college shutdown and weather data can help us understand if the weather and mask use plays an important role in covid spread.
 
-My goal here is to help data scientists analyze covid data accros United States of America based on weather conditionsa and mask usage.
+My goal here is to help data scientists analyze covid data accros United States of America based on weather conditions and mask usage.
 
 ## Data Sources
 1) [NY Times Covid Data](https://github.com/nytimes/covid-19-data) 
